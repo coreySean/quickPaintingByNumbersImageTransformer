@@ -1,0 +1,122 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<title>The HTML5 Herald</title>
+	<meta name="description" content="Paint by Numbers converter">
+	<meta name="author" content="Corey Sean Lister">
+	
+	<style>
+	#postEdit{
+		background-color: rgb(77,166,255);
+		width: 200px;
+		opacity: 0.8;
+		position: relative;
+		float: right;
+		top: 50%;
+		border: 5px solid white;
+		border-radius: 5px;
+	}
+	#dropZone{
+		border: 3px dashed rgb(77,166,255);
+		height: 300px;
+	}
+	.slidecontainer{
+		display: block;
+		width: 100%;
+	}
+	.slider{
+		display: block;
+		width: 100%;
+	}
+	#previewZone{
+		display: table;
+		width: 100%;
+	}
+	#canvasFinal{
+		display: table;
+	}
+	#colorSwab, #colorSwabOriginal{
+	width: 64px;
+	height: 64px;
+	border-radius: 5px;
+	border: 2px solid white;
+	display: inline-block;
+	}
+	.legendColor{
+		width: 120px;
+		height: 100px;
+		text-align: center;
+		display: inline-block;
+	}
+	.legendColorBlock{
+	width: 100%;
+	height: 64px;
+	}
+	.legendColorCode{
+	}
+	#legend{
+	text-align: center;
+	}
+	canvas, image{
+		max-width: 100%;
+	}
+	</style>
+
+</head>
+
+<body>
+	<div id="controlZone">
+		<fieldset>
+		<legend>Settings</legend>
+		<div class="slidecontainer">
+		Color Detail:
+			<input type="range" min="10" max="150" value="40" class="slider" id="rangeSlider">
+		</div>
+		<div class="slidecontainer">
+		Roundness:
+			<input type="range" min="1" max="5" value="3" class="slider" id="roundnessSlider">
+		</div>
+		<div>
+		Relative Colors:<input type="checkbox" id="checkboxColorFormat">
+		</div>
+		</fieldset>
+	</div>
+	<div id="dropZone"></div>
+	<div id="previewZone">
+	<div id="previewImage">
+		<canvas id="canvasPreview">Your browser does not support HTML5. Please try again with a different browser.</canvas>
+	</div>
+		<div id="postEdit">
+				<fieldset>
+				<legend>Edit Color</legend>
+				<div id="selectedColor">
+					<div id="titleColor">Color: </div>
+					<div id="titleColorValue"></div>
+					<div id="colorSwab"></div>
+					<div id="colorSwabOriginal"></div>
+					<div class="slidecontainerred">
+						<input type="range" min="0" max="255" value="125" class="slider" id="redColorSlider">
+					</div>
+					<div class="slidecontainergreen">
+						<input type="range" min="0" max="255" value="125" class="slider" id="greenColorSlider">
+					</div>
+					<div class="slidecontainerblue">
+						<input type="range" min="0" max="255" value="125" class="slider" id="blueColorSlider">
+					</div>
+				</div>
+				</fieldset>
+				
+			</div>
+			
+		</div>
+	</div>
+	
+	<canvas id="canvasFinal">Your browser does not support HTML5. Please try again with a different browser.</canvas>
+	<p>This tool was designed and tested using the Firefox web browser. If you are experiencing unfunctionality please try again using Mozilla Firefox.</p>
+	<div id="legend"></div>
+	<script src="script.js"></script>
+</body>
+</html>
